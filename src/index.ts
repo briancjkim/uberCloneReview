@@ -1,11 +1,11 @@
-import dotenv from 'dotenv';
-dotenv.config();
+import dotenv from "dotenv";
+dotenv.config({ path: "../.env" });
 
-import app from './app';
-import { Options } from 'graphql-yoga';
-import { createConnection } from 'typeorm';
-import connectionOptions from './ormConfig';
-import decodeJWT from './utils/decodeJWT';
+import app from "./app";
+import { Options } from "graphql-yoga";
+import { createConnection } from "typeorm";
+import connectionOptions from "./ormConfig";
+import decodeJWT from "./utils/decodeJWT";
 
 const PORT: number | string = process.env.PORT || 4000;
 const PLAYGROUND_ENDPOINT: string = "/playground";
@@ -25,7 +25,7 @@ const appOptions: Options = {
         if (user) {
           return {
             currentUser: user
-          }
+          };
         }
       }
       throw new Error("No JWT. Can't subscribe");
@@ -35,6 +35,8 @@ const appOptions: Options = {
 
 const handleAppStart = () => console.log(`Listening on port ${PORT}`);
 
-createConnection(connectionOptions).then(() => {
-  app.start(appOptions, handleAppStart);
-}).catch(error => console.log(error));
+createConnection(connectionOptions)
+  .then(() => {
+    app.start(appOptions, handleAppStart);
+  })
+  .catch(error => console.log(error));

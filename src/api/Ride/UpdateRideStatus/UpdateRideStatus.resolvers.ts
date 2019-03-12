@@ -33,6 +33,7 @@ const resolvers: Resolvers = {
                   driver: user,
                   passenger: ride.passenger
                 }).save();
+                chat.rideId = ride.id;
                 ride.chat = chat;
                 await ride.save();
               }

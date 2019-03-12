@@ -26,6 +26,7 @@ const resolvers: Resolvers = {
                 chat,
                 user
               }).save();
+              console.log("message", message);
               pubSub.publish("newChatMessage", {
                 MessageSubscription: message
               });
