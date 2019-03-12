@@ -65,7 +65,7 @@ type Message {
   user: User!
   chatId: Int
   chat: Chat!
-  userId: Int
+  userId: Int!
   createdAt: String!
   updatedAt: String
 }
