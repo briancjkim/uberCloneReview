@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var connectionOptions = {
     type: "postgres",
-    database: "nuberreview",
+    database: "nuber",
     synchronize: true,
     logging: true,
     entities: ["entities/**/*.*"],

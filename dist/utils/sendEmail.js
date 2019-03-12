@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var mailgun_js_1 = __importDefault(require("mailgun-js"));
 var mailGunClient = new mailgun_js_1.default({
-    apiKey: process.env.MAILGUN_API_KEY || "",
+    apiKey: "38ac1385c731a535f927e526a1727ad9-49a2671e-6d2be4f9",
     domain: "sandbox12402d687b3c4692b744200e029c7d66.mailgun.org"
 });
 var sendEmail = function (subject, html) {

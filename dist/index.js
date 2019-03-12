@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var dotenv_1 = __importDefault(require("dotenv"));
-dotenv_1.default.config();
+dotenv_1.default.config({ path: "../.env" });
 var app_1 = __importDefault(require("./app"));
 var typeorm_1 = require("typeorm");
 var ormConfig_1 = __importDefault(require("./ormConfig"));
@@ -78,7 +78,9 @@ var appOptions = {
     }
 };
 var handleAppStart = function () { return console.log("Listening on port " + PORT); };
-typeorm_1.createConnection(ormConfig_1.default).then(function () {
+typeorm_1.createConnection(ormConfig_1.default)
+    .then(function () {
     app_1.default.start(appOptions, handleAppStart);
-}).catch(function (error) { return console.log(error); });
+})
+    .catch(function (error) { return console.log(error); });
 //# sourceMappingURL=index.js.map

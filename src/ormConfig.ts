@@ -1,8 +1,9 @@
-import { ConnectionOptions } from 'typeorm';
+import { ConnectionOptions } from "typeorm";
 
+// dbname for local "nuberreview" for AWS RDS "nuber"
 const connectionOptions: ConnectionOptions = {
   type: "postgres",
-  database: "nuberreview",
+  database: "nuber",
   synchronize: true,
   logging: true,
   entities: ["entities/**/*.*"],
