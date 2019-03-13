@@ -22,8 +22,7 @@
     "morgan": "^1.9.1",
     "pg": "^7.8.0",
     "twilio": "^3.28.0",
-    "typeorm": "^0.2.12",
-    "dotenv": "^6.2.0"
+    "typeorm": "^0.2.12"
   },
   "scripts": {
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
@@ -44,7 +43,8 @@
     "nodemon": "^1.18.10",
     "ts-node": "^8.0.2",
     "tslint-config-prettier": "^1.17.0",
-    "typescript": "^3.2.4"
+    "typescript": "^3.2.4",
+    "dotenv": "^6.2.0"
   },
   "engines": {
     "node": "^10.15.0",
