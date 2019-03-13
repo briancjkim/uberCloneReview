@@ -10,7 +10,7 @@ const resolvers: Resolvers = {
     GetNearbyRide: privateResolver(
       async (_, __, { req }): Promise<GetNearbyRideResponse> => {
         const user: User = req.user;
-        if (user.isDriving) {
+        if (!user.isRiding && user.isDriving) {
           const { lastLat, lastLng } = user;
           try {
             const ride = await getRepository(Ride).findOne(

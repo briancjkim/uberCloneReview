@@ -45,6 +45,13 @@ const resolvers: Resolvers = {
                 },
                 { relations: ["passenger", "driver"] }
               );
+              if (args.status === "FINISHED") {
+                user.isTaken = false;
+                await user.save();
+                const passenger: User = ride!.passenger;
+                passenger.isRiding = false;
+                await passenger.save();
+              }
             }
             if (ride) {
               ride.status = args.status;
