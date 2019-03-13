@@ -27,7 +27,7 @@ const resolvers: Resolvers = {
               );
               if (ride) {
                 ride.driver = user;
-                user.isRiding = true;
+                ride.passenger.isRiding = true;
                 user.isTaken = true;
                 await user.save();
                 const chat = await Chat.create({
