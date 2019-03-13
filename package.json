@@ -22,7 +22,8 @@
     "morgan": "^1.9.1",
     "pg": "^7.8.0",
     "twilio": "^3.28.0",
-    "typeorm": "^0.2.12"
+    "typeorm": "^0.2.12",
+    "dotenv": "^6.2.0"
   },
   "scripts": {
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
@@ -38,7 +39,6 @@
     "@types/twilio": "^0.0.10",
     "babel-runtime": "^6.26.0",
     "copy": "^0.3.2",
-    "dotenv": "^6.2.0",
     "gql-merge": "^0.0.6",
     "graphql-to-typescript": "^0.1.2",
     "nodemon": "^1.18.10",
