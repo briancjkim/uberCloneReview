@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// dbname for local "nuberreview" for AWS RDS "nuber"
 var connectionOptions = {
     type: "postgres",
     database: "nuber",
