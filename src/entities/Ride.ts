@@ -1,14 +1,26 @@
-
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, OneToOne, JoinColumn } from "typeorm";
+import {
+  Entity,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  ManyToOne,
+  OneToOne,
+  JoinColumn
+} from "typeorm";
 import User from "./User";
 import Chat from "./Chat";
-
-
 
 @Entity()
 class Ride extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
-  @Column({ type: "text", enum: ["ACCEPTED", "ONROUTE", "FINISHED", "REQUESTING", "CANCLED"], default: "REQUESTING" })
+
+  @Column({
+    type: "text",
+    enum: ["ACCEPTED", "ONROUTE", "FINISHED", "REQUESTING", "CANCLED"],
+    default: "REQUESTING"
+  })
   status: string;
 
   @Column({ type: "text" })
@@ -29,15 +41,14 @@ class Ride extends BaseEntity {
   @Column({ type: "double precision", default: 0 })
   dropOffLng: number;
 
-
   @Column({ type: "double precision", default: 0 })
-  price: number
+  price: number;
 
   @Column({ type: "text" })
-  distance: string
+  distance: string;
 
   @Column({ type: "text" })
-  duration: string
+  duration: string;
 
   @Column({ nullable: true })
   chatId: number;
